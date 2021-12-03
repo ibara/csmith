@@ -533,10 +533,10 @@ ArrayVariable::OutputDef(std::ostream &out, int indent) const
 
 			// print type, name, and dimensions
 			output_qualified_type(out);
-			out << get_actual_name();
 			for (i=0; i<sizes.size(); i++) {
 				out << "[" << sizes[i] << "]";
 			}
+			out << get_actual_name();
 			out << " = " << build_initializer_str(init_strings) << ";";
 			outputln(out);
 		}
@@ -550,11 +550,11 @@ void ArrayVariable::OutputDecl(std::ostream &out) const
 		out << "static ";
 	}
 	output_qualified_type(out);
-	out << get_actual_name();
 	size_t i;
 	for (i=0; i<sizes.size(); i++) {
 		out << "[" << sizes[i] << "]";
 	}
+	out << get_actual_name();
 }
 
 // --------------------------------------------------------------
