@@ -534,7 +534,7 @@ ArrayVariable::OutputDef(std::ostream &out, int indent) const
 			// print type, name, and dimensions
 			output_qualified_type(out);
 			for (i=0; i<sizes.size(); i++) {
-				out << "[" << sizes[i] << "]";
+				out << "[]";
 			}
 			out << get_actual_name();
 			out << " = " << build_initializer_str(init_strings) << ";";
@@ -552,7 +552,7 @@ void ArrayVariable::OutputDecl(std::ostream &out) const
 	output_qualified_type(out);
 	size_t i;
 	for (i=0; i<sizes.size(); i++) {
-		out << "[" << sizes[i] << "]";
+		out << "[]";
 	}
 	out << get_actual_name();
 }
